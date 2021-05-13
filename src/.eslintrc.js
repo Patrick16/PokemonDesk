@@ -14,7 +14,7 @@ module.exports = {
   plugins: ['prettier', 'react', '@typescript-eslint'],
   rules: {
     '@typescript-eslint/no-unused-vars': 'error',
-    'no-console': 'error',
+    'no-console': 'warn',
     'react/jsx-filename-extension': ['error', { extensions: ['.jsx', '.tsx', '.ts', '.js'] }],
     'import/extensions': [
       'error',
