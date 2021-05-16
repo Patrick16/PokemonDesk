@@ -5,24 +5,33 @@
   background: linear-gradient(180deg, $third 0%, $primary 100%);
 }
 .contentWrap {
-  height: 252px;
-  width: 506px;
-  right: 1px;
-  top: 0px;
+  display: flex;
+  align-items: center;
 }
-.contentText {
-  height: 252px;
-  width: 506px;
-  right: 1px;
-  top: 0px;
+
+.contentText h1 {
+  font-family: Karla;
+  font-style: normal;
+  font-size: 72px;
+  line-height: 84px;
+  letter-spacing: 4px;
+  font-weight: normal;
 }
+.contentText b {
+  font-family: Karla;
+  font-style: normal;
+  font-size: 72px;
+  line-height: 84px;
+  letter-spacing: 4px;
+  font-weight: bold;
+}
+.contentText p {
+  font-family: Karla;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 36px;
+  line-height: 42px;
+}
+
 .contentParallax {
-  height: 679px;
-  width: 889px;
-  right: 0px;
-  top: 59px;
-  border-radius: 0px;
-  position: absolute;
-  right: -11.98%;
-  bottom: -5.67%;
 }

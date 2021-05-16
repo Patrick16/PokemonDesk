@@ -29,3 +29,19 @@
     padding-bottom: 6px;
   }
 }
+
+.root.width {
+  width: 100%;
+}
+
+.root.color {
+  background: yellow;
+}
+
+.root.size {
+  font-size: 13px;
+  line-height: 17px;
+  height: 56px;
+  box-shadow: inset 0px -2px 0px rgba(0, 0, 0, 0.18);
+  padding-bottom: 2px;
+}
