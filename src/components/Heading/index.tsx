@@ -1,39 +1,47 @@
-import React, { PropsWithChildren, ReactElement } from 'react';
+import React, { ReactElement } from 'react';
+import './Heading.module.scss';
 
 interface IHeadingProps {
   size: number | null;
   tag: string | null;
 }
 
-const getItem = (content: PropsWithChildren<IHeadingProps>, prop: IHeadingProps): ReactElement => {
-  if (prop.tag) {
-    return React.createElement(prop.tag, content);
+const getItem = ({ children, tag, size }: React.PropsWithChildren<IHeadingProps>): ReactElement => {
+  let localTag: string = 'p';
+
+  if (tag) {
+    return React.createElement(tag, null, children);
   }
-  if (prop.size) {
-    switch (prop.size) {
+  if (size) {
+    switch (size) {
       case 72:
-        return React.createElement('h1', content);
+        localTag = 'h1';
+        break;
       case 64:
-        return React.createElement('h2', content);
+        localTag = 'h2';
+        break;
       case 36:
-        return React.createElement('h3', content);
+        localTag = 'h3';
+        break;
       case 24:
-        return React.createElement('h4', content);
+        localTag = 'h4';
+        break;
       case 18:
-        return React.createElement('h5', content);
+        localTag = 'h5';
+        break;
       case 12:
-        return React.createElement('h6', content);
+        localTag = 'h6';
+        break;
       case 16:
-      default:
-        return React.createElement('p', content);
+        localTag = 'p';
+        break;
     }
   }
-
-  return React.createElement('p', content);
+  return React.createElement(localTag, null, children);
 };
 
-const Heading: React.FC<IHeadingProps> = (children, parameters) => {
-  return getItem(children, parameters);
+const Heading: React.FC<IHeadingProps> = (parameters) => {
+  return getItem(parameters);
 };
 
 export default Heading;

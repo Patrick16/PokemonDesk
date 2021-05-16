@@ -25,7 +25,7 @@ const HomePage = () => {
           <Parallax />
         </div>
       </Layout>
-      <Heading size={null} tag="h1">
+      <Heading size={null} tag="h3">
         Heading
       </Heading>
     </div>
