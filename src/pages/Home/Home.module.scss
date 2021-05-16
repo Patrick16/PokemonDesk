@@ -4,3 +4,25 @@
   min-height: 100vh;
   background: linear-gradient(180deg, $third 0%, $primary 100%);
 }
+.contentWrap {
+  height: 252px;
+  width: 506px;
+  right: 1px;
+  top: 0px;
+}
+.contentText {
+  height: 252px;
+  width: 506px;
+  right: 1px;
+  top: 0px;
+}
+.contentParallax {
+  height: 679px;
+  width: 889px;
+  right: 0px;
+  top: 59px;
+  border-radius: 0px;
+  position: absolute;
+  right: -11.98%;
+  bottom: -5.67%;
+}
