@@ -17,7 +17,7 @@ const HomePage = () => {
             <b>Find</b> all your favourite <b>Pokemon</b>
           </h1>
           <p>You can know the type of your Pokemon, its strengths, disadvantages and abilities</p>
-          <Button onClick={() => console.log('Button pushed')} width={false} size={false} color={false}>
+          <Button onClick={() => console.log('Button pushed')} width color>
             See Pokemons
           </Button>
         </div>
@@ -25,9 +25,7 @@ const HomePage = () => {
           <Parallax />
         </div>
       </Layout>
-      <Heading size={null} tag="h3">
-        Heading
-      </Heading>
+      <Heading tag="h2">Heading</Heading>
     </div>
   );
 };

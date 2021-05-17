@@ -5,9 +5,9 @@ import s from './Button.module.scss';
 
 interface IButtonProps {
   onClick: (event: React.MouseEvent<HTMLButtonElement>) => void;
-  width: boolean | null;
-  color: boolean | null;
-  size: boolean | null;
+  width?: boolean | null;
+  color?: boolean | null;
+  size?: boolean | null;
 }
 
 const Button: React.FC<IButtonProps> = ({ children, onClick, width = null, color = null, size = null }) => {

@@ -2,8 +2,8 @@ import React, { ReactElement } from 'react';
 import './Heading.module.scss';
 
 interface IHeadingProps {
-  size: number | null;
-  tag: string | null;
+  size?: number | null;
+  tag?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p';
 }
 
 const getItem = ({ children, tag, size }: React.PropsWithChildren<IHeadingProps>): ReactElement => {
