@@ -1,0 +1,37 @@
+@import '../../variables';
+
+.root {
+  min-height: 100vh;
+  background: linear-gradient(180deg, $third 0%, $primary 100%);
+}
+.contentWrap {
+  display: flex;
+  align-items: center;
+}
+
+.contentText h1 {
+  font-family: Karla;
+  font-style: normal;
+  font-size: 72px;
+  line-height: 84px;
+  letter-spacing: 4px;
+  font-weight: normal;
+}
+.contentText b {
+  font-family: Karla;
+  font-style: normal;
+  font-size: 72px;
+  line-height: 84px;
+  letter-spacing: 4px;
+  font-weight: bold;
+}
+.contentText p {
+  font-family: Karla;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 36px;
+  line-height: 42px;
+}
+
+.contentParallax {
+}
