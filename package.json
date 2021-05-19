@@ -11,12 +11,14 @@
   "license": "MIT",
   "dependencies": {
     "classnames": "^2.3.1",
+    "hookrouter": "1.2.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },
   "devDependencies": {
     "@svgr/webpack": "^5.5.0",
     "@types/classnames": "^2.3.1",
+    "@types/hookrouter": "^2.2.5",
     "@types/react": "^17.0.5",
     "@types/react-dom": "^17.0.5",
     "@typescript-eslint/eslint-plugin": "4.6.0",
@@ -38,6 +40,7 @@
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "4.5.0",
     "husky": "4.3.0",
+    "json-loader": "^0.5.7",
     "lint-staged": "10.5.1",
     "node-sass": "4.14.1",
     "prettier": "2.1.2",
