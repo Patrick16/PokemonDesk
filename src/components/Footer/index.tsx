@@ -5,9 +5,7 @@ import s from './Footer.module.scss';
 const Footer: React.FC = ({ children }) => {
   return (
     <div className={s.root}>
-      <div className={s.signature}>
-        <h4>{children}</h4>
-      </div>
+      <h4>{children}</h4>
     </div>
   );
 };

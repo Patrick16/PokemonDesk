@@ -15,6 +15,7 @@ module.exports = {
   rules: {
     'react/prop-types': 'off',
     'import/prefer-default-export': 'warn',
+    'react/no-array-index-key': 'warn',
     'no-shadow': 'warn',
     '@typescript-eslint/no-unused-vars': 'error',
     'no-console': 'warn',

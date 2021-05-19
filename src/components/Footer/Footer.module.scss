@@ -1,22 +1,15 @@
 .root {
-  position: absolute;
-  left: 11.11%;
-  right: 10.76%;
-  top: 95.21%;
-  bottom: 2.64%;
-}
-.signature {
-  position: relative;
-  width: 144px;
-  right: 0px;
-  top: -13.64%;
-  bottom: -13.64%;
-}
+  display: flex;
+  justify-content: flex-end;
+  max-width: 1125px;
+  margin: 0 auto;
+  width: 100%;
 
-h4 {
-  font-family: Karla;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 24px;
-  line-height: 28px;
+  h4 {
+    font-family: Karla;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 28px;
+  }
 }

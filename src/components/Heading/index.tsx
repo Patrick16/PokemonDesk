@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react';
+import React from 'react';
 import './Heading.module.scss';
 
 interface IHeadingProps {
@@ -7,12 +7,8 @@ interface IHeadingProps {
   tag?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p';
 }
 
-const getItem = ({ children, tag = 'h1', size }: React.PropsWithChildren<IHeadingProps>): ReactElement => {
+const Heading: React.FC<IHeadingProps> = ({ children, tag = 'h1', size }) => {
   return React.createElement(tag, size ? { style: { fontSize: size } } : null, children);
-};
-
-const Heading: React.FC<IHeadingProps> = (parameters) => {
-  return getItem(parameters);
 };
 
 export default Heading;
