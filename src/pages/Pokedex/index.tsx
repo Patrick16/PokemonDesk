@@ -3,7 +3,7 @@ import PokemonCard from '../../components/PokemonCard';
 import Heading from '../../components/Heading';
 import Layout from '../../components/Layout';
 import req from '../../utils/request';
-import { IApiPokemons } from '../../utils/interfaces';
+import { IApiPokemons, IPokemon } from '../../utils/interfaces';
 
 import s from './Pokedex.module.scss';
 
@@ -14,7 +14,7 @@ interface IUsePokemons {
 }
 
 const usePokemons = (): IUsePokemons => {
-  const [data, setData] = useState(null);
+  const [data, setData] = useState<IApiPokemons | null>(null);
   const [isLoading, setLoading] = useState(true);
   const [isException, setException] = useState(false);
 
@@ -22,7 +22,7 @@ const usePokemons = (): IUsePokemons => {
     const getPokemons = async () => {
       setLoading(true);
       try {
-        const result = await req('getPokemons');
+        const result: IApiPokemons = await req('getPokemons');
         setData(result);
       } catch (e) {
         setException(true);
@@ -57,7 +57,7 @@ const PokedexPage = () => {
       <Layout className={s.root}>
         <div className={s.root}>
           {data &&
-            data.pokemons.map((item) => {
+            data.pokemons.map((item: IPokemon) => {
               return (
                 <PokemonCard
                   key={item.id}
