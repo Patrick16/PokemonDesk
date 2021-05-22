@@ -1,12 +1,15 @@
 import config from '../config';
-import { IServer, IUri } from './interfaces';
+import { IQuery, IServer, IUri } from './interfaces';
 
-interface IUrl extends IServer, IUri {}
+interface IUrl extends IServer, IUri {
+  query?: IQuery;
+}
 
-function getUrlWithParamsConfig(endpointConfig: string): IUrl {
+function getUrlWithParamsConfig(endpointConfig: string, query?: IQuery): IUrl {
   return {
     ...config.client.server,
     ...config.client.endpoint[endpointConfig].uri,
+    query,
   };
 }
 export default getUrlWithParamsConfig;

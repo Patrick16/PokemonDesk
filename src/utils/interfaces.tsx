@@ -56,3 +56,7 @@ export interface IClient {
 export interface IUrlConfig {
   client: IClient;
 }
+
+export interface IQuery {
+  [s: string]: string | number | boolean;
+}
