@@ -1,62 +1,47 @@
-import React, { useEffect, useState } from 'react';
+import React, {useState} from 'react';
 import PokemonCard from '../../components/PokemonCard';
 import Heading from '../../components/Heading';
 import Layout from '../../components/Layout';
-import req from '../../utils/request';
-import { IApiPokemons, IPokemon } from '../../utils/interfaces';
+import {IApiPokemons, IPokemon, IQuery} from '../../utils/interfaces';
+import useData from "../../hooks/getData";
 
 import s from './Pokedex.module.scss';
-
-interface IUsePokemons {
-  data: IApiPokemons | null;
-  isLoading: boolean;
-  isException: boolean;
-}
-
-const usePokemons = (): IUsePokemons => {
-  const [data, setData] = useState<IApiPokemons | null>(null);
-  const [isLoading, setLoading] = useState(true);
-  const [isException, setException] = useState(false);
-
-  useEffect(() => {
-    const getPokemons = async () => {
-      setLoading(true);
-      try {
-        const result: IApiPokemons = await req('getPokemons');
-        setData(result);
-      } catch (e) {
-        setException(true);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    getPokemons();
-  }, []);
-
-  return {
-    data,
-    isLoading,
-    isException,
-  };
-};
+import useDebounce from "../../hooks/useDebounce";
+import {navigate} from "hookrouter";
+import {LinkEnum} from "../../routes";
 
 const PokedexPage = () => {
-  const { data, isLoading, isException } = usePokemons();
+  const [searchValue,setSearchValue] = useState('');
+  const [query,setQuery] = useState<IQuery>({});
+  const debouncedValue = useDebounce(searchValue,500);
+  const { data, isLoading, isException } = useData<IApiPokemons>('getPokemons',query,[debouncedValue]);
   if (isLoading) {
     return <Heading className="none">Loading...</Heading>;
   }
   if (isException) {
     return <Heading className="none">Error has occurred while loading.</Heading>;
   }
+
+  const handleSearchValue=(event:React.ChangeEvent<HTMLInputElement>)=> {
+    console.log('e',event.target.value);
+    setSearchValue(event.target.value)
+    setQuery((state:IQuery)=>({
+        ...state,
+      name:searchValue
+    }));
+  }
+
   return (
     <>
-      <Heading className="root" tag="h2" size={40}>
-        {data && data.count} <b>Pokemons</b> for you to choose your favorite
-      </Heading>
       <Layout className={s.root}>
-        <div className={s.root}>
-          {data &&
+      <Heading className="root" tag="h2" size={40}>
+        {!isLoading && data && data.count} <b>Pokemons</b> for you to choose your favorite
+      </Heading>
+        <div>
+          <input type="text" value={searchValue} onChange={handleSearchValue}/>
+        </div>
+        <div>
+          {!isLoading && data &&
             data.pokemons.map((item: IPokemon) => {
               return (
                 <PokemonCard
@@ -66,6 +51,8 @@ const PokedexPage = () => {
                   defence={item.stats.defense}
                   types={item.types}
                   img={item.img}
+                  onClick={() =>
+                    navigate(LinkEnum.POKEMON)}
                 />
               );
             })}

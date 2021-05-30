@@ -9,11 +9,12 @@ interface IPokemonCardProps {
   defence: number;
   types: string[];
   img: string;
+  onClick: ()=>void;
 }
 
-const PokemonCard: React.FC<IPokemonCardProps> = ({ name, attack, defence, types, img }) => {
+const PokemonCard: React.FC<IPokemonCardProps> = ({ name, attack, defence, types, img, onClick}) => {
   return (
-    <div className={s.root}>
+    <div className={s.root} onClick={onClick}>
       <div className={s.infoWrap}>
         <Heading size={12} className={s.titleName}>
           {name}
