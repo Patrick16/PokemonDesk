@@ -2,7 +2,7 @@ import React from 'react';
 import { A, usePath } from 'hookrouter';
 import cn from 'classnames';
 import { ReactComponent as PokemonLogoSvg } from './assets/Logo.svg';
-import { GENERAL_MENU } from '../../routes';
+import { GENERAL_MENU } from '../../linkEnum';
 
 import s from './Header.module.scss';
 

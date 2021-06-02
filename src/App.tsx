@@ -1,6 +1,6 @@
 import React from 'react';
 import { useRoutes } from 'hookrouter';
-import routes from './routes';
+import routes from './linkEnum';
 import NotFoundPage from './pages/NotFoundPage';
 import Header from './components/Header';
 import Footer from './components/Footer';
