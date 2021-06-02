@@ -1,14 +1,14 @@
 import React, {useState} from 'react';
+import {navigate} from 'hookrouter';
 import PokemonCard from '../../components/PokemonCard';
 import Heading from '../../components/Heading';
 import Layout from '../../components/Layout';
 import {IApiPokemons, IPokemon, IQuery} from '../../utils/interfaces';
-import useData from "../../hooks/getData";
+import useData from '../../hooks/getData';
+import useDebounce from '../../hooks/useDebounce';
+import {LinkEnum} from '../../linkEnum';
 
 import s from './Pokedex.module.scss';
-import useDebounce from "../../hooks/useDebounce";
-import {navigate} from "hookrouter";
-import {LinkEnum} from "../../routes";
 
 const PokedexPage = () => {
   const [searchValue,setSearchValue] = useState('');

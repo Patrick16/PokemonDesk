@@ -14,7 +14,7 @@ interface IPokemonCardProps {
 
 const PokemonCard: React.FC<IPokemonCardProps> = ({ name, attack, defence, types, img, onClick}) => {
   return (
-    <div className={s.root} onClick={onClick}>
+    <div className={s.root} onClick={onClick} onKeyPress={onClick}>
       <div className={s.infoWrap}>
         <Heading size={12} className={s.titleName}>
           {name}

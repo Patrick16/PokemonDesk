@@ -3,7 +3,7 @@ import { navigate } from 'hookrouter';
 import Button from '../../components/Button';
 import Layout from '../../components/Layout';
 import Parallax from '../../components/Parallax';
-import { LinkEnum } from '../../routes';
+import { LinkEnum } from '../../linkEnum';
 import Footer from '../../components/Footer';
 
 import s from './Home.module.scss';
