@@ -1,5 +1,10 @@
 import { IUrlConfig } from '../utils/interfaces';
 
+export enum configEndpoint{
+  getPokemons='getPokemons',
+  getPokemonTypes='getPokemonTypes'
+}
+
 export const config: IUrlConfig = {
   client: {
     server: {
@@ -11,6 +16,12 @@ export const config: IUrlConfig = {
         method: 'GET',
         uri: {
           pathname: '/api/v1/pokemons',
+        }
+      },
+      getPokemonTypes: {
+        method: 'GET',
+        uri: {
+          pathname: '/api/v1/types',
         },
       },
     },
