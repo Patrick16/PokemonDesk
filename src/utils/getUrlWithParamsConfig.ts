@@ -1,4 +1,4 @@
-import config from '../config';
+import {config} from '../config';
 import { IQuery, IServer, IUri } from './interfaces';
 
 interface IUrl extends IServer, IUri {

@@ -1,3 +1,5 @@
+import {PokemonsAction, PokemonsActionTypes} from '../store/pokemons';
+
 export interface IStats {
   hp: number;
   attack: number;
@@ -60,3 +62,17 @@ export interface IUrlConfig {
 export interface IQuery {
   [s: string]: string | number | boolean;
 }
+
+export type ITypesRequest=string[];
+
+export interface IStateRequest<T> {
+  isLoading: boolean,
+  data: null | T[] | T,
+  error: null| object
+}
+interface ITypesAction {
+  type: PokemonsActionTypes | PokemonsAction,
+  payload?: string[]
+}
+
+export type ActionTypes = ITypesAction;
